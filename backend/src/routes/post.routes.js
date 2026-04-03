@@ -11,7 +11,16 @@ const upload = multer({ storage: multer.memoryStorage()}) // memoryStorage means
 
 
 // FOR POSTING
-postRouter.post('/', upload.single('image') , postController )
+postRouter.post('/', upload.single('image') , postController.createPostController )
+
+
+
+// FOR FETCHING ALL POSTS FOR PARTICULAR USER 
+postRouter.get('/' , postController.getPostController)
+
+
+// FOR FETCHING UNIQUE POST OF UNIQUE USER 
+postRouter.get('/details/:postId' , postController.getPostDetailsController)
 
 
 module.exports = postRouter
