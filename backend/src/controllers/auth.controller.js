@@ -40,7 +40,8 @@ const user = await userModel.create({
 // creating token for user 
 const token  = jwt.sign({
     /* conditions for jwt taoken are  -  1 is user ka data hona chaiye and  2nd is  data unique hona chaiye  */
-id : user._id 
+id : user._id ,
+username : user.username
 },
  process.env.JWT_SECRET ,
  {expiresIn: process.env.JWT_EXPIRE})
@@ -95,7 +96,7 @@ if(!isPassword){
     })
 }
     const token = jwt.sign(
-        {id : user._id} ,
+        {id : user._id , username : user.username} ,
         process.env.JWT_SECRET ,
     { expiresIn:process.env.JWT_EXPIRE}
     )

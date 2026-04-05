@@ -2,6 +2,7 @@ const express = require('express')
 const postRouter = express.Router()
 const postController = require('../controllers/post.controller')
 const multer = require('multer') // It gives the power or capability to the server to read the files like img , etc,. 
+const identifyingUser = require('../middlewares/auth.middleware')
 const upload = multer({ storage: multer.memoryStorage()}) // memoryStorage means temporaray sever pe store ho gyi but permanent aggi bej di gyi permanenet storgae tak likewise : S3 , imagekit , cloudinary
 
 
@@ -21,6 +22,21 @@ postRouter.get('/' , postController.getPostController)
 
 // FOR FETCHING UNIQUE POST OF UNIQUE USER 
 postRouter.get('/details/:postId' , postController.getPostDetailsController)
+
+
+// TO LIKE ANY POST BY THE USER 
+postRouter.post('/like/:postId' , identifyingUser , postController.likePostController)
+
+
+
+
+
+
+
+
+
+
+
 
 
 module.exports = postRouter
