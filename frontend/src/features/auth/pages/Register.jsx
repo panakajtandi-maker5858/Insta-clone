@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate} from 'react-router-dom'
 import asios from "axios"
+import { useAuth } from '../hooks/useAuth'
+
 
 
 
@@ -13,25 +15,22 @@ const Register = () => {
 const [ username , setUsername ] = useState('')
 const [ email , setEmail ] = useState('')
 const [ password , setPassword ] = useState('')
+const navigate = useNavigate()
+const { loading , handleRegister} = useAuth()
+
+
 
 async function handleSubmit(e){
     e.preventDefault()
 
-   asios.post('http://localhost:3000/api/auth/register' , {
-    username ,
-    email ,
-    password
-   } , {
-    withCredentials : true 
-   })
-.then(res => {
-    console.log(res.data)
-})
+   await handleRegister(username , email , password)
+   navigate('/login')
 
 
 
 }
 
+if (loading) return <main><h1>Loading....</h1></main>
 
   return (
     <>
