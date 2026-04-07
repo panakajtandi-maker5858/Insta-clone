@@ -1,6 +1,8 @@
+// Hook layer manages Api layer and State layer , ( ye api ko call krne ka kaam krti hain aur storage means state layer me state change krne ka kaam krti hain )
+
 import { useContext } from "react";
 import { AuthContext } from "../auth.context";
-import { login, register } from "../services/auth.api";
+import { login, register , getMe} from "../services/auth.api";
 
 export const useAuth = () => {
     const context = useContext(AuthContext)

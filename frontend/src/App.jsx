@@ -3,6 +3,7 @@ import { router } from "./App.routes"
 import { AuthProvider } from "./features/auth/auth.context"
 import "./features/shared/global.scss"
 
+
 function App() {
     return (
         <AuthProvider>

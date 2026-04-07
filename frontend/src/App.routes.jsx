@@ -9,6 +9,10 @@ import Register from './features/auth/pages/Register'
 export const router = createBrowserRouter([
 
 { path: "/login" , element: <Login/>} ,
-{ path: '/register' , element: <Register/>}
+{ path: '/register' , element: <Register/>} ,
+{ path: '/', element: <div>
+    <h1>Welcome to our Website .</h1> 
+    <p>Site is under Progress.....</p>
+</div>}
 
 ])

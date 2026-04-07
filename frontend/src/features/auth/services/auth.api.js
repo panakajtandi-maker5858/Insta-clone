@@ -1,3 +1,5 @@
+// THE CODE WHICH CONNECTS THE FRONTEND WITH BACKEND BY USING API IS WRITTEN IN IT .
+
 import axios from "axios";
 
 const api = axios.create({

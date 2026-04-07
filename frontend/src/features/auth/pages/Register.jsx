@@ -57,7 +57,7 @@ if (loading) return <main><h1>Loading....</h1></main>
             placeholder='Enter your password'
             />
 
-        <button>Register</button>
+        <button className='button primary-button' >Register</button>
 
             </form>
 

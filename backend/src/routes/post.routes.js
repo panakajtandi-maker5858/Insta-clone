@@ -12,16 +12,16 @@ const upload = multer({ storage: multer.memoryStorage()}) // memoryStorage means
 
 
 // FOR POSTING
-postRouter.post('/', upload.single('image') , postController.createPostController )
+postRouter.post('/', upload.single('image') ,identifyingUser,  postController.createPostController )
 
 
 
 // FOR FETCHING ALL POSTS FOR PARTICULAR USER 
-postRouter.get('/' , postController.getPostController)
+postRouter.get('/' ,identifyingUser , postController.getPostController)
 
 
 // FOR FETCHING UNIQUE POST OF UNIQUE USER 
-postRouter.get('/details/:postId' , postController.getPostDetailsController)
+postRouter.get('/details/:postId' ,identifyingUser ,  postController.getPostDetailsController)
 
 
 // TO LIKE ANY POST BY THE USER 
