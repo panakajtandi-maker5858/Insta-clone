@@ -28,6 +28,10 @@ postRouter.get('/details/:postId' ,identifyingUser ,  postController.getPostDeta
 postRouter.post('/like/:postId' , identifyingUser , postController.likePostController)
 
 
+// TO GET ALL THE POSTS CREATED IN DB 
+postRouter.get("/feed" , identifyingUser , postController.getFeedController)
+
+
 
 
 

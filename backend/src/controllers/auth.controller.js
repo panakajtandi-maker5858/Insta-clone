@@ -77,7 +77,7 @@ const user = await userModel.findOne({
         {email : email}
     ]
     
-})
+}).select("+password")
 
 if(!user) {
     return res.status(404).json({
