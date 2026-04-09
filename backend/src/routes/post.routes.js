@@ -27,6 +27,9 @@ postRouter.get('/details/:postId' ,identifyingUser ,  postController.getPostDeta
 // TO LIKE ANY POST BY THE USER 
 postRouter.post('/like/:postId' , identifyingUser , postController.likePostController)
 
+// TO UNLIKE ANY POST BY USER 
+postRouter.post('/unlike/:postId' , identifyingUser , postController.unLikePostController)
+
 
 // TO GET ALL THE POSTS CREATED IN DB 
 postRouter.get("/feed" , identifyingUser , postController.getFeedController)

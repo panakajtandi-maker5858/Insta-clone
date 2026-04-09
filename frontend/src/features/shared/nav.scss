@@ -1,0 +1,37 @@
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #333;
+    background-color: #131313;
+    z-index: 100;
+
+    h1 {
+        font-size: 20px;
+        color: #d20c3d;
+    }
+
+    .links {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 14px;
+    }
+    
+a {
+        text-decoration: none;
+        font-weight: semi-bold;
+        transition: 0.2s;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+    a:active{
+        scale:0.95 ;
+    }
+
+}
